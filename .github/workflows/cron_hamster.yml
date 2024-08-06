@@ -1,4 +1,4 @@
-name: Cex
+name: Hamster
 on:
   workflow_dispatch: # allow manual run
   schedule:

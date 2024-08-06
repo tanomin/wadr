@@ -1,4 +1,4 @@
-name: Tomarket
+name: Run Tomarket
 on:
   workflow_dispatch:
    inputs:
