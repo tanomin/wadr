@@ -3,7 +3,7 @@ on:
   workflow_dispatch: # allow manual run
   schedule:
     # 2h
-    - cron: '0 */4 * * *'
+    - cron: '0 */1 * * *'
 
 jobs:
   build:
