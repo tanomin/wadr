@@ -1,8 +1,10 @@
-name: Cex
+name: Cex claim
 on:
   workflow_dispatch: # allow manual run
-  schedule:
-    - cron: '*/2 */4 * * *' # 4h30
+    inputs:
+       num:
+         description: 'Offset of accounts to claim'
+         required: true
 
 jobs:
   build:
@@ -35,5 +37,5 @@ jobs:
 
       - run: pnpm i
       
-      - name: Crontab
-        run: node cex/cron.js
+      - name: Claim
+        run: node cex/claim.mjs ${{ github.event.inputs.num }}
