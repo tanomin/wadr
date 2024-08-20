@@ -1,8 +1,10 @@
-name: Tomarket
+name: Tomarket claim
 on:
   workflow_dispatch: # allow manual run
-  schedule:
-    - cron: '0 */3 * * *'
+    inputs:
+       num:
+         description: 'Offset of accounts to claim'
+         required: true
 
 jobs:
   build:
@@ -35,5 +37,5 @@ jobs:
 
       - run: pnpm i
       
-      - name: Crontab
-        run: node tomarket/cron.js
+      - name: Claim
+        run: node tomarket/claim.mjs ${{ github.event.inputs.num }}
