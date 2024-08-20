@@ -1,4 +1,4 @@
-name: Nomis claim
+name: Loa claim
 on:
   workflow_dispatch: # allow manual run
     inputs:
