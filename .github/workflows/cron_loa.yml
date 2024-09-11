@@ -1,9 +1,9 @@
 name: Loa
 on:
   workflow_dispatch: # allow manual run
-  schedule:
+  # schedule:
     # 1h
-    - cron: '0 */1 * * *'
+    # - cron: '0 */1 * * *'
 
 jobs:
   build:
