@@ -1,9 +1,10 @@
-name: Banana
+name: Banana claim
 on:
   workflow_dispatch: # allow manual run
-  schedule:
-    # 2h
-    - cron: '0 */1 * * *'
+    inputs:
+       num:
+         description: 'Offset of accounts to claim'
+         required: true
 
 jobs:
   build:
@@ -36,5 +37,5 @@ jobs:
 
       - run: pnpm i
       
-      - name: Crontab
-        run: node banana/cron.js
+      - name: Claim
+        run: node banana/claim.js ${{ github.event.inputs.num }}
